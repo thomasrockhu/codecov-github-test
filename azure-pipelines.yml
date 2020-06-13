@@ -1,4 +1,4 @@
- Python package
+# Python package
 # Create and test a Python package on multiple Python versions.
 # Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
@@ -60,5 +60,7 @@ steps:
   displayName: 'Run tests and collect coverage'
 
 - script: |
-    bash <(curl -s https://codecov.io/bash)
+    curl -s https://codecov.io/bash | bash
   displayName: 'Upload coverage reports to Codecov'
+  env:
+    CODECOV_TOKEN: $(CODECOV_TOKEN)
