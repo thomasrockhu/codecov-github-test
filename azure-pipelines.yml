@@ -41,6 +41,18 @@ strategy:
     windows3.7:
       imageName: 'vs2017-win2016'
       python.version: '3.7'
+    windows32-2.7:
+      imageName: 'VS2017-Win2016'
+      python.version: '2.7'
+    windows32-3.5:
+      imageName: 'VS2017-Win2016'
+      python.version: '3.5'
+    windows32-3.6:
+      imageName: 'VS2017-Win2016'
+      python.version: '3.6'
+    windows32-3.7:
+      imageName: 'VS2017-Win2016'
+      python.version: '3.7'
 
 pool:
   vmImage: $(imageName)
