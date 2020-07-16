@@ -13,7 +13,7 @@ jobs:
           command: coverage run tests.py
       - run:
           name: Upload coverage reports to Codecov
-          command: bash <(curl -s https://codecov.io/bash) -F test-12.9.0meow-1
+          command: bash <(curl -s https://codecov.io/bash)
 
 workflows:
   version: 2.1
