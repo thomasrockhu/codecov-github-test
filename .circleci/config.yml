@@ -18,7 +18,6 @@ jobs:
           command: bash <(curl -s https://codecov.io/bash)
       - command: codecov/upload
 
-
 workflows:
   version: 2.1
   build-test:
