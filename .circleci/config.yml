@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  codecov: codecov/codecov@1.1.0
 jobs:
   build:
     docker:
@@ -12,8 +14,9 @@ jobs:
           name: Run tests and collect coverage
           command: coverage run tests.py
       - run:
-          name: Upload coverage reports to Codecov
+          name: Upload coverage reports to Codecov with bash script
           command: bash <(curl -s https://codecov.io/bash)
+      - codecov/upload
 
 workflows:
   version: 2.1

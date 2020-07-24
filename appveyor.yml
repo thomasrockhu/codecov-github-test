@@ -1,0 +1,11 @@
+install:
+  - pip install coverage
+
+build_script:
+  - echo 'Starting...'
+
+test_script:
+  - coverage run tests.py
+
+after_test:
+  - curl -s https://codecov.io/bash | bash
