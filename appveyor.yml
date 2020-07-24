@@ -8,4 +8,4 @@ test_script:
   - coverage run tests.py
 
 after_test:
-  - bash <(curl -s https://codecov.io/bash)
+  - curl -s https://codecov.io/bash | bash
