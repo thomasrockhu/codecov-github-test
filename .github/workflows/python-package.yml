@@ -30,8 +30,8 @@ jobs:
         echo $GITHUB_EVENT_NUMBER
         echo $GITHUB_HEAD_REF
         echo $GITHUB_EVENT_PATH
-        echo {{ github.event }}
-        echo {{ github.event.number }}
+        echo ${{ github.event }}
+        echo ${{ github.event.number }}
     - name: Install coverage
       run: |
         pip install coverage
