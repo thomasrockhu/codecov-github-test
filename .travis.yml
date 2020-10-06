@@ -6,7 +6,7 @@ python: 2.7
 
 script:
   - pip install pytest-cov
-  - pytest --cov=awesome .
+  - pytest --cov=awesome --cov-report=xml
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
