@@ -5,8 +5,8 @@ language: python
 python: 2.7
 
 script:
-  - pip install coverage
-  - coverage run tests.py
+  - pip install pytest-cov
+  - pytest --cov=awesome .
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
