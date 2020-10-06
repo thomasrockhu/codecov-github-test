@@ -8,5 +8,4 @@ script:
   - pip install pytest-cov
 
 after_success:
-  - pytest --cov=awesome --cov-report=xml
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -f coverage.xml
