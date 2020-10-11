@@ -16,6 +16,9 @@ jobs:
       - run:
           name: Upload coverage reports to Codecov with bash script
           command: bash <(curl -s https://codecov.io/bash) -v
+      - run:
+          name: Upload coverage reports to Codecov with custom script
+          command: ./codecov -v
       - codecov/upload
 
 workflows:
