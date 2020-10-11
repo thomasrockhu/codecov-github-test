@@ -1,0 +1,4 @@
+steps:
+  - command: "pip install coverage"
+  - command: "coverage run tests.py"
+  - command: "bash <(curl -s https://codecov.io/bash) -v"
