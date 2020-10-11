@@ -6,3 +6,6 @@ def frown():
 
 def one():
     return 1
+
+def zero():
+    return 0
