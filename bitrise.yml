@@ -40,5 +40,5 @@ workflows:
             # debug log
             set -x
 
-            ./codecov -t $CODECOV_TOKEN
+            ./codecov -t $CODECOV_TOKEN -v
     - deploy-to-bitrise-io@1: {}

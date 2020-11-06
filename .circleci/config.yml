@@ -15,7 +15,7 @@ jobs:
           command: coverage run tests.py
       - run:
           name: Upload coverage reports to Codecov with bash script
-          command: ./codecov
+          command: ./codecov -v
       - codecov/upload
 
 workflows:
