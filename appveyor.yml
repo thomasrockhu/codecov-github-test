@@ -8,4 +8,4 @@ test_script:
   - coverage run tests.py
 
 after_test:
-  - codecov
+  - bash ./codecov
