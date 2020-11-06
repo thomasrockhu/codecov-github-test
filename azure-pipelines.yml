@@ -89,7 +89,7 @@ steps:
   displayName: 'Run tests and collect coverage'
 
 - script: |
-    ./codecov
+    bash ./codecov
   displayName: 'Upload coverage reports to Codecov'
   env:
     CODECOV_TOKEN: $(CODECOV_TOKEN)
