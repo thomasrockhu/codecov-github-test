@@ -30,9 +30,15 @@ workflows:
         inputs:
         - CODECOV_TOKEN: "$CODECOV_TOKEN"
         - other_options: ''
-    - script@3:
+    - script@1:
         title: Bash Codecov
         inputs:
         - content: |-
+            #!/usr/bin/env bash
+            # fail if any commands fails
+            set -e
+            # debug log
+            set -x
+
             ./codecov -t $CODECOV_TOKEN
     - deploy-to-bitrise-io@1: {}
