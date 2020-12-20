@@ -860,7 +860,6 @@ then
     commit=$mc
   fi
 
-
 elif [ "$CI" = "true" ] && [ "$BITBUCKET_BUILD_NUMBER" != "" ];
 then
   say "$e==>$x Bitbucket detected."
