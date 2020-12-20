@@ -61,11 +61,11 @@ steps:
   displayName: 'Run tests and collect coverage'
 
 - script: |
-    echo '$BUILD_SOURCEVERSION'
+    echo $(BUILD_SOURCEVERSION)
   displayName: 'Print sourceversion'
 
 - script: |
-    echo '$SYSTEM_PULLREQUEST_SOURCECOMMITID'
+    echo $(SYSTEM_PULLREQUEST_SOURCECOMMITID)
   displayName: 'Print pr source'
 
 - script: |
