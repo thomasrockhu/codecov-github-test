@@ -10,8 +10,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
+  build-v1-d1:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -19,6 +18,82 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install coverage
+      run: |
+        pip install coverage
+    - name: Run tests and collect coverage
+      run: |
+        coverage run tests.py
+    - name: Upload coverage reports to Codecov with bash script
+      run: |
+        bash <(curl -s https://codecov.io/bash)
+    - name: Upload coverage reports to Codecov with GitHub Action
+      uses: codecov/codecov-action@v1
+
+  build-v2-d1:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install coverage
+      run: |
+        pip install coverage
+    - name: Run tests and collect coverage
+      run: |
+        coverage run tests.py
+    - name: Upload coverage reports to Codecov with bash script
+      run: |
+        bash <(curl -s https://codecov.io/bash)
+    - name: Upload coverage reports to Codecov with GitHub Action
+      uses: codecov/codecov-action@v1
+
+  build-v1-d2:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
+
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install coverage
+      run: |
+        pip install coverage
+    - name: Run tests and collect coverage
+      run: |
+        coverage run tests.py
+    - name: Upload coverage reports to Codecov with bash script
+      run: |
+        bash <(curl -s https://codecov.io/bash)
+    - name: Upload coverage reports to Codecov with GitHub Action
+      uses: codecov/codecov-action@v1
+
+  build-v2-d2:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
