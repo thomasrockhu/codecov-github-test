@@ -61,6 +61,14 @@ steps:
   displayName: 'Run tests and collect coverage'
 
 - script: |
+    echo '$BUILD_SOURCEVERSION'
+  displayNmae: 'Print sourceversion'
+
+- script: |
+    echo '$SYSTEM_PULLREQUEST_SOURCECOMMITID'
+  displayNmae: 'Print pr source'
+
+- script: |
     curl -s https://codecov.io/bash | bash
   displayName: 'Upload coverage reports to Codecov'
   env:
