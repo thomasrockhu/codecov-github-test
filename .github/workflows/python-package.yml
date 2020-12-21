@@ -29,9 +29,9 @@ jobs:
     - name: Whats the GITHUB_WORKFLOW
       run: |
         echo $GITHUB_WORKFLOW
-        echo $(urlencode "http://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}")
-        echo $(urlencode "http://github.com/${GITHUB_REPOSITORY}/runs/${GITHUB_RUN_ID}")
-        echo $(urlencode "http://github.com/${GITHUB_REPOSITORY}/runs/${GITHUB_RUN_NUMBER}")
+        echo "http://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+        echo "http://github.com/${GITHUB_REPOSITORY}/runs/${GITHUB_RUN_ID}"
+        echo "http://github.com/${GITHUB_REPOSITORY}/runs/${GITHUB_RUN_NUMBER}"
     - name: Run tests and collect coverage
       run: |
         coverage run tests.py
