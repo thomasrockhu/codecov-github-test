@@ -28,7 +28,7 @@ jobs:
         pip install coverage
     - name: Whats the GITHUB_WORKFLOW
       run: |
-        echo $(GITHUB_WORKFLOW)
+        echo $GITHUB_WORKFLOW
     - name: Run tests and collect coverage
       run: |
         coverage run tests.py
