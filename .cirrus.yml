@@ -4,7 +4,6 @@ container:
 test_task:
   pip_cache:
     folder: ~/.cache/pip
-    fingerprint_script: echo $PYTHON_VERSION && cat requirements.txt
     populate_script: pip install coverage
   test_script: coverage run tests.py
   upload_coverage_script: bash <(curl -s https://codecov.io/bash) -X s3
