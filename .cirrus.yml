@@ -1,0 +1,7 @@
+container:
+  image: python:3.9.1
+
+test_task:
+  populate_script: pip install coverage
+  test_script: coverage run tests.py
+  upload_coverage_script: bash <(curl -s https://codecov.io/bash) -X s3
