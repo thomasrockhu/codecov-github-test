@@ -1,0 +1,10 @@
+container:
+  image: python:slim
+
+test_task:
+  pip_cache:
+    folder: ~/.cache/pip
+    fingerprint_script: echo $PYTHON_VERSION && cat requirements.txt
+    populate_script: pip install coverage
+  test_script: coverage run tests.py
+  upload_coverage: bash <(curl -s https://codecov.io/bash) -X s3
