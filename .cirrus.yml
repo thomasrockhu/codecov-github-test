@@ -2,8 +2,6 @@ container:
   image: python:3.9.1
 
 test_task:
-  pip_cache:
-    folder: ~/.cache/pip
-    populate_script: pip install coverage
+  populate_script: pip install coverage
   test_script: coverage run tests.py
   upload_coverage_script: bash <(curl -s https://codecov.io/bash) -X s3
