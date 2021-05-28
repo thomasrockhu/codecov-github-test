@@ -39,4 +39,3 @@ jobs:
         curl -fLso codecov "https://github.com/codecov/uploader/releases/download/v0.1.0_3190/codecov-linux"
         chmod +x ./codecov
         ./codecov -v
-
