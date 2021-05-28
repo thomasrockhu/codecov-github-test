@@ -34,7 +34,3 @@ jobs:
         bash <(curl -s https://codecov.io/bash)
     - name: Upload coverage reports to Codecov with GitHub Action
       uses: codecov/codecov-action@v1
-    - name: Download Codecov binary
-      run: |
-        bash <(curl https://github.com/codecov/uploader/releases/download/v0.1.0_3190/codecov-linux)
-
