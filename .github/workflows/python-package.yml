@@ -34,7 +34,8 @@ jobs:
         bash <(curl -s https://codecov.io/bash)
     - name: Upload coverage reports to Codecov with GitHub Action
       uses: codecov/codecov-action@v1
-      env:
-        VERBOSE: true
-      with:
-        verbose: ${{ env.VERBOSE }}
+    - name: Download Codecov binary
+        run: |
+        curl -fLso codecov "https://github.com/codecov/uploader/releases/download/v0.1.0_3844/codecov-linux"
+        chmod +x ./codecov
+        ./codecov -v
