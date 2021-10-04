@@ -26,9 +26,10 @@ workflows:
             # write your script here
             pip install coverage
             coverage run tests.py
-    - codecov@2:
+            coverage xml
+    - codecov@3:
         inputs:
         - CODECOV_TOKEN: "$CODECOV_TOKEN"
-        - other_options: ''
+        - OS: "linux"
     - deploy-to-bitrise-io@1: {}
 
